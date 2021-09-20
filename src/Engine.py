@@ -96,7 +96,7 @@ class GameEngine:
 
     def clear(self, clear=True):
         if clear:
-            os.system("cls")
+            os.system('cls' if os.name == 'nt' else 'clear')
 
     def menu(self, title, options, smooth=False, custom_error='', clear=False):
         state_backup = self.printer.enabled
